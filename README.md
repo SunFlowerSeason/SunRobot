@@ -1,11 +1,11 @@
 # SUNCORP
 # Software Engineering Programming Exercise – Toy Robot
 
-This repository provides an implementation for the Toy Robot exercise. This repository houses a set of modules that allow an operator to transverse a Toy Robot around a grid field using a limited set of commands.
+This repository provides an implementation for the Toy Robot exercise. This repository houses a set of modules that allow a console operator to transverse a Toy Robot around a grid field using a limited set of commands.
 
 ## Overview
 
-This guide aims to get a copy of the implementation running on your local computer for development, testing, and deployment purposes.
+This guide aims to get a copy of the implementation running on a local computer for development, testing, and deployment purposes.
 
 ## Requirements
 
@@ -28,7 +28,7 @@ A Robot class exists that processes actions from instances of the Command class.
 
 A design decision was made to accept and process Robot *move* actions when at the edge of the grid field without raising nor displaying an error. When a Robot is at the edge of the grid field and a *move* action is commanded, the Robot shall simply stay at it's current position.
 
-There is also a standalone Test class. See section Running the tests for notes. 
+There is also a standalone Test class. See section *Running the tests* for notes. 
 
 All classes are loosely coupled, and dependencies have been minimised as a design focus.
 
