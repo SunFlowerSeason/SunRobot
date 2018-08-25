@@ -1,4 +1,4 @@
-# SUNCORP
+﻿# SUNCORP
 # Software Engineering Programming Exercise – Toy Robot
 
 This repository provides an implementation for the Toy Robot exercise. This repository houses a set of modules that allow a console operator to transverse a Toy Robot around a grid field using a limited set of commands.
@@ -16,19 +16,19 @@ The Toy Robot implementation is separated into a set of classes:
 
 The Application class uses a message pump allowing a console operator to input a series of commands that are then processed by the Toy Robot. The Application class has a single static member function.
 
-The Command class parses all of the input from the console operator. This class shall raise custom exceptions with detailed messages instead of printing error or logging messages. This ease's testing as it is more efficient to detect and measure an exception compared to a printed string. The Command class is used as input to the Robot class to control the Toy Robot.
+The Command class parses all of the input from the console operator. This class shall raise custom exceptions with detailed messages instead of printing error or logging messages. This ease's testing as it is more efficient to detect and measure an exception compared to a printed string. There are also specific Command Action classes for each of the support commands.
 
-There is a Compass module that contains a few utility functions for validating and printing compass headings.
+There is a Compass class that contains a few utility member functions for validating and printing compass headings.
 
-A Robot class exists that processes actions from instances of the Command class. This class also raises custom exceptions with detailed messages instead of printing error or logging messages. The Robot class maintains the following state information:
+The Robot class provides the basic functions to move a Robot. The Robot class maintains the following state information:
 * Current X and Y positioning
 * Current compass heading
 * Knowledge whether it has received and successfully actioned a placement command
 * The size of the grid field
 
-A design decision was made to accept and process Robot *move* actions when at the edge of the grid field without raising nor displaying an error. When a Robot is at the edge of the grid field and a *move* action is commanded, the Robot shall simply stay at it's current position.
+A design decision was made to accept and process Robot *move* instruction when at the edge of the grid field without raising nor displaying an error. When a Robot is at the edge of the grid field and a *move* instruction is commanded, the Robot shall simply stay at it's current position.
 
-There is also a standalone Test class. See section *Running the tests* for notes. 
+There is also a standalone Test class. See section *Running the Tests* for notes. 
 
 All classes are loosely coupled, and dependencies have been minimised as a design focus.
 
@@ -41,9 +41,9 @@ A Test module is included which runs a small set of positive and negative unit t
 
 ```
 > python Test.py
-...........
+..............
 ----------------------------------------------------------------------
-Ran 11 tests in 0.002s
+Ran 14 tests in 0.003s
 
 OK
 

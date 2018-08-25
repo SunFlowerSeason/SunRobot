@@ -18,8 +18,8 @@ class Application(object):
                 try:
                   # Parse the command.
                     cmd = Command(line)
-                  # Pass the validated command to the robot for actioning.
-                    toy.Process(cmd)
+                  # Execute the validated command on the robot.
+                    cmd.Execute(toy)
                 except CommandException as ce:
                     print(ce)
                 except RobotException as re:
@@ -41,7 +41,7 @@ if __name__ == '__main__':
         if arg == "-h": # Print a help screen.
             print("The Toy Robot application accepts single commands on the command prompt.\n")
             print("Supported commands include:\n")
-            print("PLACE X,Y,D - Places the toy robot on the field at the coordinate X and Y and eading D (N, S, E, or W).\n")
+            print("PLACE X,Y,D - Places the toy robot on the field at the coordinate X and Y and heading D (N, S, E, or W).\n")
             print("MOVE - Moves the robot forward one unit in it's current heading.\n")
             print("TURN D - Turns the robot to a new heading D (N, S, E, or W).\n")
             print("REPORT - Console print out of the robot's current location and it's heading.\n")
